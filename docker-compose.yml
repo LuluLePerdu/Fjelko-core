@@ -1,8 +1,8 @@
-version: '3'
-
 services:
   payload:
     image: node:20-alpine
+    profiles:
+      - app
     ports:
       - '3000:3000'
     volumes:
@@ -11,20 +11,28 @@ services:
     working_dir: /home/node/app/
     command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
     depends_on:
-      - mongo
-      # - postgres
+      postgres:
+        condition: service_healthy
     env_file:
       - .env
 
   postgres:
-     restart: always
-     image: postgres:latest
-     volumes:
-       - pgdata:/var/lib/postgresql/data
-     ports:
-       - "5432:5432"
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-payload}
+      POSTGRES_USER: ${POSTGRES_USER:-payload}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-payload}
+    ports:
+      - '${POSTGRES_PORT:-5433}:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-payload} -d ${POSTGRES_DB:-payload}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
-  data:
-  # pgdata:
+  pgdata:
   node_modules:
