@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/* Minimal reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --color-bg-base: #0d110e;
+  --color-bg-surface: #141a15;
+  --color-bg-elevated: #1c2420;
+  --color-forest: #2d4a34;
+  --color-forest-light: #4a7a54;
+  --color-fog: #e8e5df;
+  --color-fog-muted: #9a9890;
+  --color-fog-subtle: #5a5a56;
+  --color-border: rgba(232, 229, 223, 0.08);
+  --color-border-hover: rgba(232, 229, 223, 0.16);
+}
+
+.dark {
+  --color-bg-base: #0d110e;
+  --color-bg-surface: #141a15;
+  --color-bg-elevated: #1c2420;
+  --color-forest: #2d4a34;
+  --color-forest-light: #4a7a54;
+  --color-fog: #e8e5df;
+  --color-fog-muted: #9a9890;
+  --color-fog-subtle: #5a5a56;
+  --color-border: rgba(232, 229, 223, 0.08);
+  --color-border-hover: rgba(232, 229, 223, 0.16);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-fog);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+}
+
+label,
+[role='label'],
+.eyebrow,
+.caps-label {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-fog-muted);
+  text-transform: uppercase;
+}
+
+button,
+.btn-primary,
+.btn-ghost {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.btn-primary {
+  background: var(--color-forest);
+  color: var(--color-fog);
+  border: 1px solid var(--color-forest);
+}
+
+.btn-primary:hover {
+  background: var(--color-forest-light);
+  border-color: var(--color-forest-light);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-fog);
+  border: 0.5px solid var(--color-fog);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-fog-muted);
+  color: var(--color-fog);
+  background: rgba(232, 229, 223, 0.02);
+}

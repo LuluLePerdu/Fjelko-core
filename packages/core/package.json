@@ -1,0 +1,33 @@
+{
+  "name": "@fjelkor/core",
+  "version": "1.0.0",
+  "description": "Fjelkor Core - Reusable Payload CMS blocks, collections, and modules",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./blocks/*": "./src/blocks/*/index.ts",
+    "./collections/*": "./src/collections/*.ts",
+    "./globals/*": "./src/globals/*.ts",
+    "./modules/*": "./src/modules/*/index.ts",
+    "./access/*": "./src/access/*.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "peerDependencies": {
+    "payload": "^3.0.0",
+    "react": "^19.0.0",
+    "next": "^16.0.0"
+  },
+  "keywords": [
+    "payload",
+    "cms",
+    "blocks",
+    "page-builder"
+  ],
+  "author": "Fjelkor",
+  "license": "MIT"
+}

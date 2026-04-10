@@ -1,0 +1,101 @@
+.cta {
+  margin: 42px 48px 0;
+  padding: 90px 24px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(800px 300px at 50% -20%, rgba(74, 122, 84, 0.36) 0%, rgba(74, 122, 84, 0) 70%),
+    linear-gradient(180deg, #162019 0%, #111812 100%);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heading {
+  margin: 0 0 18px;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--color-fog);
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--color-fog-muted);
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease, color 180ms ease;
+}
+
+.primaryButton {
+  border: 1px solid var(--color-forest);
+  background: var(--color-forest);
+  color: var(--color-fog);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-forest-light);
+  background: var(--color-forest-light);
+}
+
+.secondaryButton {
+  border: 0.5px solid var(--color-fog);
+  background: transparent;
+  color: var(--color-fog);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-fog-muted);
+  background: rgba(232, 229, 223, 0.03);
+}
+
+@media (max-width: 768px) {
+  .cta {
+    margin: 24px 24px 0;
+    padding: 68px 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,1 @@
+export { HomeFooter, type HomeFooterProps } from './components/HomeFooter'
